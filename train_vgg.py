@@ -13,7 +13,7 @@ if not os.path.exists(test_npy_path):
 train_input, train_label = ops.load_data(is_training=True)
 test_input, test_label = ops.load_data(is_training=False)
 """DEFINE HYPER-PARAMETER"""
-training_epochs = 300
+training_epochs = 100
 batch_size = 100
 
 """LEARNING & TESTING MODEL"""
