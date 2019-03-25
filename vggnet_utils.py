@@ -38,19 +38,19 @@ def make_onehot(train_dir, is_training=True):
     train_input = np.array(train_input).astype(np.float32)
     train_label = np.array(train_label).astype(np.float32)
     if is_training:
-        np.save("train_data.npy", train_input)
-        np.save("train_label.npy", train_label)
+        np.save("./data/train_data.npy", train_input)
+        np.save("./data/train_label.npy", train_label)
     else:
-        np.save("test_data.npy", train_input)
-        np.save("test_label.npy", train_label)
+        np.save("./data/test_data.npy", train_input)
+        np.save("./data/test_label.npy", train_label)
 
 def load_data(is_training=True):
     if is_training:
-        input = np.load('train_data.npy')
-        label = np.load('train_label.npy')
+        input = np.load('./data/train_data.npy')
+        label = np.load('./data/train_label.npy')
     else:
-        input = np.load('test_data.npy')
-        label = np.load('test_label.npy')
+        input = np.load('./data/test_data.npy')
+        label = np.load('./data/test_label.npy')
     index = np.arange(len(input))
     np.random.shuffle(index)
     input = input[index, :, :, :]
