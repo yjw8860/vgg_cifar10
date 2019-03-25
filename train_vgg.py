@@ -5,9 +5,9 @@ import os
 train_npy_path = './data/train_data.npy'
 test_npy_path = './data/test_data.npy'
 if not os.path.exists(train_npy_path):
-    ops.make_onehot(train_dir='./data/train', is_training=True)
+    ops.make_onehot(train_dir='./data/cifar10_images/train', is_training=True)
 if not os.path.exists(test_npy_path):
-    ops.make_onehot(train_dir='./data/test', is_training=False)
+    ops.make_onehot(train_dir='./data/cifar10_images/test', is_training=False)
 
 """LOAD DATA"""
 train_input, train_label = ops.load_data(is_training=True)
